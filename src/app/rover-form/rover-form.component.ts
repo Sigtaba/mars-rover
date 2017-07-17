@@ -34,9 +34,4 @@ export class RoverFormComponent {
       }
     });
   }
-
-  saveRoverImages(date, camera){
-    this.marsRoverPhotos.saveImages(date, camera);
-    alert("The images from " + date + "taken by the " + camera + " camera have been saved to the database.")
-  }
 }
