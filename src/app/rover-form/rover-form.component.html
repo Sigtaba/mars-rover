@@ -15,6 +15,14 @@
       <option value="MAHLI">Mars Hand Lens Imager</option>
     </select>
   </div>
-  <button (click)="getRoverImages(roverDate.value, roverCamera.value)">Get Photos</button>
+  <button (click)="getRoverImages(roverDate.value, roverCamera.value)">View Images</button>
+  <button (click)="saveRoverImages(roverDate.value, roverCamera.value)">Save All Images</button>
 </form>
 <h1>testing</h1>
+
+<div *ngIf="photos && !noPhotos">
+  <app-photos-list [childPhotos]="photos"></app-photos-list>
+</div>
+<div *ngIf="noPhotos">
+    <h3>There were no photos taken on {{roverDate.value}} by the {{roverCamera.value}} camera.</h3>
+</div>
